@@ -1,33 +1,33 @@
 {
-  "name": "contacts-app",
+  "name": "contacts_backend",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "start": "node index.js",
+    "dev": "nodemon contacts-web-server/index.js",
+    
+    "build": "npm run build --prefix contacts-frontend",
+   
     "lint": "eslint .",
-    "preview": "vite preview",
-    "server": "node contacts_backend/index.js",
-    "proxy": "http://localhost:3001/api/contacts"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.7.7",
     "cors": "^2.8.5",
+    "express": "^4.21.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@types/react": "^18.3.10",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.2",
-    "eslint": "^9.11.1",
-    "eslint-plugin-react": "^7.37.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.12",
-    "globals": "^15.9.0",
-    "json-server": "^1.0.0-beta.3",
-    "vite": "^5.4.8"
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "nodemon": "^3.1.7",
+    "vite": "^6.0.0"
   }
 }

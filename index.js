@@ -6,6 +6,7 @@ const app = express();
 
 app.use(cors()); // Allow all origins
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'contacts-frontend/build')));
 
 // list of contacts
 let contacts = [
@@ -14,8 +15,12 @@ let contacts = [
   { id: 3, name: 'Bob Johnson', email: 'bob@example.com' },
 ];
 
-app.get('/', (req, res) => {
-  res.send('<h1>Welcome to the Contacts API</h1>');
+
+
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contacts-frontend', 'build', 'index.html'));
 });
 
 // API endpoint for displaying contacts
